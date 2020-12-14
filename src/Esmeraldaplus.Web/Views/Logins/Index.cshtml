@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+@section Vista_Genelar {
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+}
+
+<form asp-area="" asp-controller="Home" asp-action="Index1" method="post" onsubmit="return validar()" class="form-inicio-sesion">
+    <h2 class="titulo">INICIAR SESION</h2>
+    <div class="contenido-input">
+        <input type="email" id="correo" placeholder="Correo Electronico" class="input-100">
+        <input type="password" id="contraseña" placeholder="Contraseña" class="input-100">
+        <p>Estoy de acuerdo con <a href="terms and conditions.html">Terminos y Condiciones</a></p>
+        <input type="submit" onclick="ingresar()" value="Iniciar Sesion" class="btn-iniciar">
+        <p>¿No tienes cuenta? <a asp-area="" asp-controller="Registers" asp-action="Index">Registrate</a></p>
+    </div>
+</form>
+@section Scripts {
+    <script type="text/javascript" src="../js/login.js"></script>
+}

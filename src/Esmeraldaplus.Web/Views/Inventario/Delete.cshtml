@@ -1,0 +1,60 @@
+﻿@model Esmeraldaplus.Core.Domain.Inventario
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/Fomularios.cshtml";
+}
+@section Formularios{
+
+    <link href="~/css/delete_inventary.css" rel="stylesheet" />
+}
+
+<div class="contenido">
+    <h3>BORRAR</h3>
+
+
+    <p>FechaIngresoProducto</p>
+
+    <p>@Html.DisplayFor(model => model.FechaIngresoProducto)</p>
+
+
+    <p>CantidadProducto</p>
+
+
+    <p>  @Html.DisplayFor(model => model.CantidadProducto)  </p>
+  
+
+    <p>CantidadInsumo</p>
+
+    <p>    @Html.DisplayFor(model => model.CantidadInsumo)</p>
+
+
+
+    <p> FechaIngresoInsumos</p>
+    <p>  @Html.DisplayFor(model => model.FechaIngresoInsumos)</p>
+  
+    <p>IdDelProductoNavigation</p>
+
+    <p> @Html.DisplayFor(model => model.IdDelProductoNavigation.IdProducto)</p>
+
+   
+
+    <p>IdInsumosNavigation</p>
+
+
+    <p> @Html.DisplayFor(model => model.IdInsumosNavigation.Id)</p>
+   
+
+
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdInventario" />
+        <input type="submit" value="Delete" class="delete" /> |
+    </form>
+    <a asp-area="" asp-controller="Inventario" asp-action="Index" class="back">volver a la lista</a>
+</div>
+
+
+
+
+

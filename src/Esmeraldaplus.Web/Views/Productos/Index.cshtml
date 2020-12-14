@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Esmeraldaplus.Core.Domain.Productos>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/RegisterLogin1.cshtml";
+}
+@section Login {
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />*@
+    <link rel="stylesheet" href="../css/list_inventary.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/homepage.css">
+
+}
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorProducto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdTipoNavigation.IdTipoDeProductos)
+                </td>
+                <td>
+                    <a class="crear" asp-action="Details" asp-route-id="@item.IdProducto">Detalles</a>
+                    <a class="actualizar" asp-action="Edit" asp-route-id="@item.IdProducto">Editar</a>
+                    <a class="borrar" asp-action="Delete" asp-route-id="@item.IdProducto">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

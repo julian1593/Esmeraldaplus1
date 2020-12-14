@@ -1,0 +1,91 @@
+* {
+	box-sizing: border-box;
+}
+	/*Logo*/
+img{
+	width: 100px;
+	margin-left: 470px;
+}
+	/*Encabezado*/
+header{
+	width: 95%;
+	max-width: 1000px;
+	background: #000;
+	margin: auto;
+	border-radius: 20px;
+}
+body{
+	font-family: Arial;
+	background: #fff;
+}
+	/*formulario*/
+.form-inicio-sesion{
+	width: 95%;
+	max-width: 500px;
+	margin: auto;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 20px;
+}
+	/*Titulo de Formulario*/
+.titulo{
+	background: green;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	font-size: 30px;
+	border-radius: 20px;
+	border-bottom: 2px solid darkgray;
+}
+	/*Contenido del Formulario*/
+.contenido-input{
+	padding: 10px 40px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	}
+	/*Todos los inputs*/
+input{
+	padding: 15px;
+	font-size: 16px;
+	margin-bottom: 15px;
+	border-radius: 20px;
+	border: 1px solid dargray;
+}
+	/*Tamaño de los inputs*/
+.input-48{
+	width: 48%;
+}
+.input-64{
+	width: 64%;
+}
+.input-108{
+	width: 100%;
+}
+.doc-form{
+	width: 32%;
+	margin-bottom: 15px;
+	padding: 15px;
+	font-size: 16px;
+	border-radius: 20px;
+	border: 1px solid dargray;
+}
+	/*Parrafos de Terminos y registrarse*/
+p{
+	text-align: center;
+	width: 100%;
+	color: #fff;
+	font-size: 16px;
+}
+	/*Boton de Registrarse*/
+.btn-register{
+	margin: auto;
+	padding: 10px 40px;
+	background: green;
+	color: #fff;
+	font-size: 20px;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.btn-registrar{
+	transform: scale(1.05);
+}

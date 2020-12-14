@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/RegisterLogin1.cshtml";
+}
+
+@section Login {
+    <link rel="stylesheet" href="../css/home-admin.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+}
+
+
+<div class="menu">
+    <span class="icon-menu"> Menu</span>
+</div>
+
+<div class="container-admin">
+    <div class="opciones">
+        <h4>Inventario</h4>
+        <p>Actualiza e incorpora nuevos productos en venta a la pagina web para que las personas los vean</p>
+        <a asp-area="" asp-controller="Inventario" asp-action="Index">Vamos</a>
+    </div>
+    <div class="opciones">
+        <h4>Lista de Productos</h4>
+        <p>Lista con los clientes mas recientes que han comprado en nuestra pagina</p>
+        <a asp-area="" asp-controller="Productos" asp-action="Index">Vamos</a>
+    </div>
+    <div class="opciones2">
+        <h4>Clientes</h4>
+        <p>Actualmente esta funcion no esta disponible por la situacion de pandemia</p>
+        <a asp-area="" asp-controller="Cliente" asp-action="Index">Vamos</a>
+    </div>
+    <!--<div class="opciones2">
+        <h4>Configuracion de Cuenta</h4>
+        <p>Actualmente esta funcion no esta disponible debido a que esta en mantenimiento</p>
+        <a href="#">Vamos</a>
+    </div>-->
+
+</div>
+

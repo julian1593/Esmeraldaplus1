@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EsmeraldaPLus</title>
+    
+    @RenderSection("Vista_Genelar", required: false)
+</head>
+
+<body>
+    <header class="container-header">
+        <div class="titulo"><h1>Esmeralda plus</h1></div>
+
+        <div class="login">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Cerrar Sesion</a>
+            <a asp-area="" asp-controller="Administrador" asp-action="Index">Administrador</a>
+        </div>
+    </header>
+ 
+        @RenderBody()
+
+   
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

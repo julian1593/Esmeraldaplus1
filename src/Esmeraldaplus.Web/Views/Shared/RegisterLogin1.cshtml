@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EsmeraldaPlus.Web</title>
+
+    @RenderSection("Login", required: false)
+</head>
+<body>
+    <header class="container-header">
+        <div class="titulo"><h1>Esmeralda plus</h1></div>
+
+        <div class="login">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-dark">Cerrar Sesion</button>
+            </form>
+            <a asp-area="" asp-controller="Administrador" asp-action="Index">Administrador</a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home-admin.html">Inicio</a></li>
+            <li><a href="#">Clientes</a></li>
+            <li><a href="#">Inventario</a></li>
+            <li><a href="#">Lista de Productos</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu">
+        <span class="icon-menu"> Menu</span>
+    </div>
+
+
+    @RenderBody()
+
+
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

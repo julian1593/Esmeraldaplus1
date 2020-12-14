@@ -1,0 +1,56 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EsmeraldaPLus</title>
+    @RenderSection("Vista_Genelar", required: false)
+
+</head>
+<body>
+    <header class="container-header">
+        <div class="titulo"><h1>Esmeralda plus</h1></div>
+
+        <div class="login">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button type="submit" class="nav-link btn btn-link text-dark">Cerrar Sesion</button>
+                </form>
+                <a asp-area="" asp-controller="Administrador" asp-action="Index">Administrador</a>
+            }
+            else
+            {
+                <a asp-area="Identity" asp-page="/Account/Login">Iniciar Sesion</a>
+                <a asp-area="Identity" asp-page="/Account/Register">Registrarse</a>
+            }
+
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer class="footer">
+        <div class="contacto">
+            <div class="siguenos">
+                <p>siguenos</p>
+                <span class="icon-facebook"></span>
+                <span class="icon-twitter"></span>
+                <span class="icon-instagram"></span>
+            </div>
+
+            <div class="contactanos">
+                <p>Contactanos</p>
+                <a href="#">6852899</a>
+                <a href="#">3214567899</a>
+            </div>
+
+        </div>
+    </footer>
+    @RenderSection("Scripts", required: false)
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</body>
+</html>
