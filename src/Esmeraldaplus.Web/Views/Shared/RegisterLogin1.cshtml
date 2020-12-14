@@ -15,15 +15,15 @@
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                 <button type="submit" class="nav-link btn btn-link text-dark">Cerrar Sesion</button>
             </form>
-            <a asp-area="" asp-controller="Administrador" asp-action="Index">Administrador</a>
+            
         </div>
     </header>
     <nav>
         <ul>
-            <li><a href="home-admin.html">Inicio</a></li>
-            <li><a href="#">Clientes</a></li>
-            <li><a href="#">Inventario</a></li>
-            <li><a href="#">Lista de Productos</a></li>
+            <li><a asp-area="" asp-controller="Administrador" asp-action="Index">Administrador</a></li>
+            <li><a asp-area="" asp-controller="Cliente" asp-action="Index">Clientes</a></li>
+            <li><a asp-area="" asp-controller="Inventario" asp-action="Index">Inventario</a></li>
+            <li><a asp-area="" asp-controller="Administrador" asp-action="Index">Lista de Productos</a></li>
         </ul>
     </nav>
 

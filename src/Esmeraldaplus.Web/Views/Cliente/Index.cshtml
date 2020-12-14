@@ -15,9 +15,9 @@
 }
 <h1>Clietes</h1>
 
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
-</p>
+</p>*@
 <table class="table">
     <thead>
         <tr> 
@@ -87,9 +87,9 @@
                     @Html.DisplayFor(modelItem => item.IdRolesNavigation.IdRoles)
                 </td>
                 <td>
-                    <a class="crear" asp-action="Details" asp-route-id="@item.IdCliente">Detalles</a>
+                    <a class="detalles" asp-action="Details" asp-route-id="@item.IdCliente">Detalles</a>
                     <a class="actualizar" asp-action="Edit" asp-route-id="@item.IdCliente">Editar</a> 
-                    <a class="borrar" asp-action="Delete" asp-route-id="@item.IdCliente">Borrar</a>
+                    @*<a class="borrar" asp-action="Delete" asp-route-id="@item.IdCliente">Borrar</a>*@
 
                 </td>
             </tr>

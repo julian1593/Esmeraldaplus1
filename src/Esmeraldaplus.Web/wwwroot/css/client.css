@@ -87,20 +87,6 @@ nav ul li a:active{
 		display: block;
 	}
 }
-.agregar{
-	display: inline-block;
-	margin-top: 25px;
-	margin-bottom: 10px;
-	margin-left: 20px;
-	padding: 10px;
-	text-decoration: none;
-	background: #16B208;
-	color: #fff;
-	border-radius: 12px;
-}
-.agregar:active{
-	background: rgba(0,0,0,0.3);
-}
 .contenido{
 	width: 100%;
 	max-width: 1200px;

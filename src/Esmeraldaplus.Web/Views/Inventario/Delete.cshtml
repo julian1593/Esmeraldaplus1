@@ -12,40 +12,26 @@
 <div class="contenido">
     <h3>BORRAR</h3>
 
+    <p>Id</p>
+    <p>@Html.DisplayFor(model => model.IdInventario)</p>
 
-    <p>FechaIngresoProducto</p>
-
+    <p>Fecha de Ingreso Producto</p>
     <p>@Html.DisplayFor(model => model.FechaIngresoProducto)</p>
 
+    <p>Cantidad del Producto</p>
+    <p>@Html.DisplayFor(model => model.CantidadProducto)</p>
 
-    <p>CantidadProducto</p>
+    <p>Cantidad del Insumo</p>
+    <p>@Html.DisplayFor(model => model.CantidadInsumo)</p>
 
-
-    <p>  @Html.DisplayFor(model => model.CantidadProducto)  </p>
-  
-
-    <p>CantidadInsumo</p>
-
-    <p>    @Html.DisplayFor(model => model.CantidadInsumo)</p>
-
-
-
-    <p> FechaIngresoInsumos</p>
+    <p> Fecha de Ingreso Insumos</p>
     <p>  @Html.DisplayFor(model => model.FechaIngresoInsumos)</p>
-  
-    <p>IdDelProductoNavigation</p>
 
-    <p> @Html.DisplayFor(model => model.IdDelProductoNavigation.IdProducto)</p>
+    <p>Id del Producto</p>
+    <p>@Html.DisplayFor(model => model.IdDelProductoNavigation.IdProducto)</p>
 
-   
-
-    <p>IdInsumosNavigation</p>
-
-
+    <p>Id del Insumos</p>
     <p> @Html.DisplayFor(model => model.IdInsumosNavigation.Id)</p>
-   
-
-
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="IdInventario" />

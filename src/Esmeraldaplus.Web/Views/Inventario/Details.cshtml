@@ -2,54 +2,38 @@
 
 @{
     ViewData["Title"] = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/Fomularios.cshtml";
 }
 
-<h1>Details</h1>
+@section Formularios{
+    <link href="~/css/details.css" rel="stylesheet" />
+}
 
-<div>
-    <h4>Inventario</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaIngresoProducto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaIngresoProducto)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CantidadProducto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CantidadProducto)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CantidadInsumo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CantidadInsumo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaIngresoInsumos)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaIngresoInsumos)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdDelProductoNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdDelProductoNavigation.IdProducto)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdInsumosNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdInsumosNavigation.Id)
-        </dd>
-    </dl>
+<div class="contenido">
+    <h3>DETALLE INVENTARIO</h3>
+
+    <p>Id</p>
+    <p>@Html.DisplayFor(model => model.IdInventario)</p>
+
+    <p>Fecha de Ingreso Producto</p>
+    <p>@Html.DisplayFor(model => model.FechaIngresoProducto)</p>
+
+    <p>Cantidad del Producto</p>
+    <p>@Html.DisplayFor(model => model.CantidadProducto)</p>
+
+    <p>Cantidad del Insumo</p>
+    <p>@Html.DisplayFor(model => model.CantidadInsumo)</p>
+
+    <p> Fecha de Ingreso Insumos</p>
+    <p>  @Html.DisplayFor(model => model.FechaIngresoInsumos)</p>
+
+    <p>Id del Producto</p>
+    <p>@Html.DisplayFor(model => model.IdDelProductoNavigation.IdProducto)</p>
+
+    <p>Id del Insumos</p>
+    <p> @Html.DisplayFor(model => model.IdInsumosNavigation.Id)</p>
+
+    <a class="edit" asp-action="Edit" asp-route-id="@Model.IdInventario">Editar</a>
+    <a asp-area="" asp-controller="Inventario" asp-action="Index" class="back">volver a la lista</a>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.IdInventario">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

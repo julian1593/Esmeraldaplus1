@@ -2,59 +2,55 @@
 
 @{
     ViewData["Title"] = "Edit";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/Fomularios.cshtml";
 }
 
-<h1>Edit</h1>
+@section Formularios{
+    <link href="~/css/edit_inventary.css" rel="stylesheet" />
+}
 
-<h4>Inventario</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<h1>Editar</h1>
+<form action="" method="post" onsubmit="return validar()">
+    <div class="contenido">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IdInventario" />
-            <div class="form-group">
-                <label asp-for="FechaIngresoProducto" class="control-label"></label>
-                <input asp-for="FechaIngresoProducto" class="form-control" />
-                <span asp-validation-for="FechaIngresoProducto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CantidadProducto" class="control-label"></label>
-                <input asp-for="CantidadProducto" class="form-control" />
-                <span asp-validation-for="CantidadProducto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdDelProducto" class="control-label"></label>
-                <select asp-for="IdDelProducto" class="form-control" asp-items="ViewBag.IdDelProducto"></select>
-                <span asp-validation-for="IdDelProducto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CantidadInsumo" class="control-label"></label>
-                <input asp-for="CantidadInsumo" class="form-control" />
-                <span asp-validation-for="CantidadInsumo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdInsumos" class="control-label"></label>
-                <select asp-for="IdInsumos" class="form-control" asp-items="ViewBag.IdInsumos"></select>
-                <span asp-validation-for="IdInsumos" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaIngresoInsumos" class="control-label"></label>
-                <input asp-for="FechaIngresoInsumos" class="form-control" />
-                <span asp-validation-for="FechaIngresoInsumos" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
+
+            <label asp-for="IdInventario" class="control-label">Fecha de Ingreso de Producto</label>
+            <input asp-for="IdInventario" class="form-control" id="fechaproducto">
+            <span asp-validation-for="IdInventario" class="text-danger"></span>
+
+            <label asp-for="FechaIngresoProducto" class="control-label">Fecha de Ingreso de Producto</label>
+            <input asp-for="FechaIngresoProducto" class="form-control" id="fechaproducto">
+            <span asp-validation-for="FechaIngresoProducto" class="text-danger"></span>
+
+            <label asp-for="CantidadProducto" class="control-label">Cantidad de Producto</label>
+            <input asp-for="CantidadProducto" class="form-control" type="number" id="cantidadproducto">
+            <span asp-validation-for="CantidadProducto" class="text-danger"></span>
+
+            <label asp-for="IdDelProducto" class="control-label">Id de Producto</label>
+            <select asp-for="IdDelProducto" class="form-control" asp-items="ViewBag.IdDelProducto" id="productoid" required=""></select>
+            <span asp-validation-for="IdDelProducto" class="text-danger"></span>
+
+            <label asp-for="CantidadInsumo" class="control-label">Cantidad de Insumos</label>
+            <input asp-for="CantidadInsumo" class="form-control" type="number" / id="cantidadinsumos">
+            <span asp-validation-for="CantidadInsumo" class="text-danger"></span>
+
+            <label asp-for="IdInsumos" class="control-label">Id de Insumos</label>
+            <select asp-for="IdInsumos" class="form-control" asp-items="ViewBag.IdInsumos" id="insumosid" required=""></select>
+            <span asp-validation-for="IdInsumos" class="text-danger"></span>
+
+            <label asp-for="FechaIngresoInsumos" class="control-label">Fecha de Ingreso de Insumo</label>
+            <input asp-for="FechaIngresoInsumos" class="form-control" id="fechainsumo">
+            <span asp-validation-for="FechaIngresoInsumos" class="text-danger"></span>
+
+            <input type="submit" value="Agregar" class="btn btn-primary" id="btn-crear" />
+            <a asp-action="Index">Back to List</a>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+</form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript" src="../js/create_uptadete_inventary.js"></script>
 }
